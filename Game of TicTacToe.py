@@ -16,18 +16,6 @@
 # Imports
 import random  # Used to access pre-made time and randomization features
 import time
-# import pygame
-
-
-# pygame.init()
-# pygame.font.init()
-# screen = pygame.display.set_mode((1200, 800))
-
-# def print_text(text, text_color, font_size, x, y):
-#     font = pygame.font.Font(None, font_size)
-#     text_render = font.render(text, True, text_color)
-#     screen.blit(text_render, (x, y))
-
 
 class color:  # used to display the text-based program in an aesthetic manner
     PURPLE = '\033[95m'
