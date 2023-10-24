@@ -6,12 +6,12 @@
  Total Duration: 8 Days
 
  Description:
-    A text based version of Tic Tac Toe.
+    A text-based version of Tic Tac Toe.
     Special Features include:
         * Multiplayer
         * 5 different levels of difficulty
         * Instructions included
-        * Color coordinated Titles and Menus
+        * Color-coordinated Titles and Menus
  """
 # Imports
 import random  # Used to access pre-made time and randomization features
@@ -65,7 +65,7 @@ Credited to OVS, ICS3U
 def makeMove():
     """
     Generates a random number that is still available.
-    Will return 0 if there is no positions remaining.
+    Will return 0 if there are no positions remaining.
     """
     x = random.randint(1, 9)
     while numbers_taken.count(x) == 1:
@@ -86,9 +86,9 @@ def makeMove():
 # Gamemode - Hard
 def makeMove_Hard(loc):
     '''
-    Generates a position for the computer to go to in the Hard gamemode. 
+    Generates a position for the computer to go to in the Hard game mode. 
     5 is the best option for the computer to go at for its first move.
-    otherwise, it plans a few strategic methods of apporach.
+    otherwise, it plans a few strategic methods of approach.
     '''
     if numbers_taken.count(5) != 1:
         loc = 5
@@ -164,9 +164,9 @@ def makeMove_Hard(loc):
 # Gamemode - IMPOSSIBLE
 def turn_1(loc):
     '''
-    This is for the IMPOSSIBLE gamemode. 
+    This is for the IMPOSSIBLE game mode. 
     It is a specialized function, only used once in gameplay.
-    It will give the best choice the computer can go at for its first turn.
+    It will give the best choice the computer can make for its first turn.
 
     '''
     if playerX.count(5) != 1:
@@ -186,7 +186,7 @@ def turn_1(loc):
 
 def turn_2(loc):
     '''
-    This is for the IMPOSSIBLE gamemode. 
+    This is for the IMPOSSIBLE game mode. 
     It is a specialized function, only used once in gameplay.
     It will give the best choice the computer can go at for its second turn.
     '''
@@ -316,9 +316,9 @@ def turn_2(loc):
 
 def turn_3(loc):
     """
-    This is for the IMPOSSIBLE gamemode.
+    This is for the IMPOSSIBLE game mode.
     It is a specialized function, only used once in gameplay.
-    It will give the best choice the computer can go at for its third turn.
+    It will give the best choice the computer can make for its third turn.
     """
     if playerX.count(2) and playerX.count(4) and numbers_taken.count(1) != 1:
         loc = 1
@@ -360,8 +360,8 @@ def turn_3(loc):
 
 def turn_4(loc):
     """
-    This is for the IMPOSSIBLE gamemode.
-    After 3 turns, there will be no winner.(If there is no block move or winning move available)
+    This is for the IMPOSSIBLE game mode.
+    After 3 turns, there will be no winner. (If there is no block move or winning move available)
     """
     loc = makeMove()
     return loc
@@ -372,7 +372,7 @@ def blockMove(loc):
     """
     Find what values the player has and the available values remaining.
     If the player has 2 in a row (horizontally, vertically, or diagonally) the computer will BLOCK it
-    It will return -1 if no computer blocking move availiable
+    It will return -1 if no computer-blocking move available
     """
     p = check_Values("Computer", "X")
     n = check_Values("All", "All")
@@ -412,7 +412,7 @@ def blockMove(loc):
         loc = 5
     elif p[4] and p[7] and n[1] != 1:
         loc = 2
-    # RIGHT VERITCAL
+    # RIGHT VERTICAL
     elif p[2] and p[5] and n[8] != 1:
         loc = 9
     elif p[2] and p[8] and n[5] != 1:
@@ -441,8 +441,8 @@ def blockMove(loc):
 
 def winningMove(loc):
     '''
-    Checks to see if there is any winning move avaliable for the computer to take. 
-    It will scan to see all the computer points, then all the avaliable points.
+    This function checks to see if there is any winning move available for the computer to take. 
+    It will scan to see all the computer points, and then all the available points.
     If the computer has a chance of winning, and the spot is opened, the computer will place its point there. 
     If the computer has a chance of winning, but the spot is taken, the computer will not be able to go there. 
     It will return -1 if no computer winning move otherwise move
@@ -485,7 +485,7 @@ def winningMove(loc):
         loc = 5
     elif c[4] and c[7] and n[1] != 1:
         loc = 2
-    # RIGHT VERITCAL
+    # RIGHT VERTICAL
     elif c[2] and c[5] and n[8] != 1:
         loc = 9
     elif c[2] and c[8] and n[5] != 1:
@@ -786,7 +786,7 @@ def Player_turn(shape):
 def turn_novice(playerXO):
     """
     This is the Novice difficulty for the computer.
-    The loop used when the player or computer makes a turn.
+    The loop is used when the player or computer makes a turn.
     This loop is only entered when there is no winner.
     """
     # CODE FOR HUMAN PLAYER HERE
@@ -811,8 +811,8 @@ def turn_novice(playerXO):
 
 def turn_easy(playerXO):
     """
-    This is the easy difficulty for the computer.
-    The loop used when the player or computer makes a turn.
+    This is an easy difficulty for the computer.
+    The loop is used when the player or computer makes a turn.
     This loop is only entered when there is no winner.
     """
     # CODE FOR HUMAN PLAYER HERE
@@ -850,7 +850,7 @@ def turn_easy(playerXO):
 def turn_medium(playerXO):
     """
     This is the medium difficulty for the computer.
-    The loop used when the player or computer makes a turn.
+    The loop is used when the player or computer makes a turn.
     This loop is only entered when there is no winner.
     """
     # CODE FOR HUMAN PLAYER HERE
@@ -894,7 +894,7 @@ def turn_medium(playerXO):
 def turn_hard(playerXO):
     """
     This is the Hard difficulty for the computer.
-    The loop used when the player or computer makes a turn.
+    The loop is used when the player or computer makes a turn.
     This loop is only entered when there is no winner.
     """
     # CODE FOR HUMAN PLAYER HERE
@@ -934,7 +934,7 @@ def turn_hard(playerXO):
 def turn_impossible(playerXO, turn):
     """
     This is the Impossible difficulty for the computer.
-    The loop used when the player or computer makes a turn.
+    The loop is used when the player or computer makes a turn.
     This loop is only entered when there is no winner.
     It is impossible to beat.
     It has specialized functions for each turn to ensure victory
@@ -980,7 +980,7 @@ def turn_impossible(playerXO, turn):
 # Player vs. Player Function
 def human_turn(playerXO):
     """
-    The loop used when the player X or player O makes a turn. This loop is only entered when there is no winner.
+    The loop is used when player X or player O makes a turn. This loop is only entered when there is no winner.
     """
     # CODE FOR PLAYER X HERE
     if player == ' x ':
@@ -1038,7 +1038,7 @@ while running:
                 winner = 0
 
                 while human_turn(player) != 0 and numbers_taken != [1, 2, 3, 4, 5, 6, 7, 8,
-                                                                    9]:  # when player does not quit and when there are still available positions on the board
+                                                                    9]:  # When the player does not quit and when there are still available positions on the board
 
                     displayBoard()
                     if player == ' x ':  # switch player between moves
@@ -1078,7 +1078,7 @@ while running:
                 print(
                     f"\tPlayer X wins: {userX}\n\tPlayer O wins: {userO}\n\tDraws: {draw}")  # Displays statistics
                 play_again = input(
-                    "\nWould you like to play against your human opponent again? (y/n): ")  # Asks user if they want to play again
+                    "\nWould you like to play against your human opponent again? (y/n): ")  # Asks the user if they want to play again
             elif play_again.lower() == "n" or play_again.lower() == "no" or play_again.lower() == "2" or play_again.lower() == '0':
                 print("Thank you for playing!")
                 break
@@ -1221,22 +1221,22 @@ Please select a number with your choice difficulty level: ''')
                         print(color.BOLD + color.GREEN + "\n\tGame Mode selection:" + color.END)
                         print('''
         The user is given an option to choose their game mode when they play against the computer.
-        Below is a brief description of each gamemode.
+        Below is a brief description of each game mode.
 
         Novice:
             In Novice mode, the computer has no strategy or skill at all.
             A great way to learn how to play!
         Easy:
-            In easy mode, the computer will try to block you or take a win if it is avaliable.
-            Other than that, the computer will not have a strategy to point selection.
+            In easy mode, the computer will try to block you or take a win if it is available.
+            Other than that, the computer will not have a strategy for point selection.
 
         Medium:
             In medium mode, the computer will do all that is in easy mode.
             Plus it will also try to block you off of your first move. It has a bit more strategy.
 
         Hard:
-            In hard mode, the computer wil do all in medium mode.
-            Plus it will also think ahead. It will think about what you can do if you choose a following move.
+            In hard mode, the computer will do all in medium mode.
+            Plus it will also think ahead. It will think about what you can do if you choose the following move.
 
         Impossible:
             As the name suggests, it is impossible to beat.
@@ -1249,7 +1249,7 @@ Please select a number with your choice difficulty level: ''')
                         print(
                             color.RED + color.BOLD + f"\n'{difficulty}' is out of range.\nPlease try again." + color.END)
                 # End GAME LOOP
-                if difficulty != 0:  # If the player did not exit
+                if difficulty != 0:  # If the player did not exit the game
                     playerX.sort()
                     computerO.sort()
                     print(color.BOLD + color.YELLOW + color.U_LINE + "\nGAME OVER\n" + color.END)
@@ -1289,7 +1289,7 @@ Please select a number with your choice difficulty level: ''')
         print(color.BOLD + color.GREEN + "\tRules of the game:" + color.END)
         print('''
     \t*  The game is played on a grid that's 3 squares by 3 squares.
-    \t*  You are X, your friend (or the computer) is O.
+    \t*  You are X, and your friend (or the computer) is O.
     \t*  Players take turns putting their marks in empty squares.
     \t*  The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.
     \t*  When all 9 squares are full, the game is over.
@@ -1299,7 +1299,7 @@ Please select a number with your choice difficulty level: ''')
         print('''
 
     \t*  Pick a number between 1-9.
-    \t\t*  Only numbers that are avaliable will be accepted.
+    \t\t*  Only numbers that are available will be accepted.
     \t*  Beat your opponent by getting 3 in a row.
 
 ''')
